@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>04_component_props</title>
+</head>
+<body>
+
+<div id="example1"></div>
+
+<script type="text/javascript" src="../js/react.development.js"></script>
+<script type="text/javascript" src="../js/react-dom.development.js"></script>
+<script type="text/javascript" src="../js/prop-types.js"></script>
+<script type="text/javascript" src="../js/babel.min.js"></script>
+
+<script type="text/babel">
+
+  /*
+需求: 自定义用来显示一个人员信息的组件, 效果如页面. 说明
+  1). 如果性别没有指定, 默认为男
+  2). 如果年龄没有指定, 默认为18
+  */
+class Person extends React.Component{
+    render(){
+        const p1=this.props
+        return(
+            <ul>
+              <li>{p1.name}</li>
+              <li>性别???</li>
+              <li>年龄???</li>
+            </ul>
+        )
+    }
+}
+const p1={
+    name:'tom',
+    sex:'男',
+    age: 15,
+}
+const p2={
+    name:'jerry',
+    sex:'女',
+    age:18
+}
+Person.propTypes={
+    name:propTypes.String.isRequired//属性名必须写
+}
+ReactDOM.render(<Person {...p1}/>,document.getElementById('example1'))
+</script>
+</body>
+</html>
+

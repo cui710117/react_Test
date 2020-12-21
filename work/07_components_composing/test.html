@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>05_components_composing</title>
+</head>
+<body>
+
+  <div id="example"></div>
+
+  <script type="text/javascript" src="../js/react.development.js"></script>
+  <script type="text/javascript" src="../js/react-dom.development.js"></script>
+  <script type="text/javascript" src="../js/prop-types.js"></script>
+  <script type="text/javascript" src="../js/babel.min.js"></script>
+  <script type="text/babel">
+    /*
+     1)拆分组件: 拆分界面,抽取组件
+     2)实现静态组件: 使用组件实现静态页面效果
+     3)实现动态组件
+     ① 动态显示初始化数据
+     ② 交互功能(从绑定事件监听开始)
+     */
+    class App extends React.Component{
+        state={
+
+        }
+        render(){
+            return(
+                <div>
+                  <input type="text"/>
+                  <button>添加#1</button>
+                  <todoList/>
+                </div>
+
+            )
+        }
+    }
+    class todoApp extends React.Component{
+        render(){
+
+        }
+    }
+    class todoList extends React.Component{
+        render(){
+            return (
+                <ul>
+                  <li>2</li>
+                  <li>2</li>
+                  <li>2</li>
+                </ul>
+            )
+        }
+    }
+    ReactDOM.render(<App/>,document.getElementById('example'))
+  </script>
+</body>
+</html>

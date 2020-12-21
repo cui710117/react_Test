@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="a"></div>
+    <div id="2"></div>
+    <script type="text/javascript" src="../js/react.development.js"></script>
+    <script type="text/javascript" src="../js/react-dom.development.js"></script>
+    <script type="text/javascript" src="../js/babel.min.js"></script>
+
+    <script type="text/babel">
+        function MyComponent(){
+  		return <h2>工厂函数组件 简单组件</h2>   
+  		/*返回虚拟DOM*/
+  	}
+
+        ReactDOM.render(<MyComponent/>,document.getElementById('a'))
+    </script>
+</body>
+</html>
