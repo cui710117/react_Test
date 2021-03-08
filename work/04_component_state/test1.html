@@ -19,22 +19,25 @@
     2. 点击标题更新为: 我喜欢你
   */
   
-  class Likes extends React.Component{
-    state={
-      Like:true
+
+  class Likes extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {Like: true }
     }
     hander=()=>{
       this.setState({
         Like:!this.state.Like
       })
     }
-    render(){
+    render() { 
       const Like=this.state.Like
       const isLikes=Like?'我喜欢你':'你喜欢我'
-      return <h2 onClick={this.hander}>{isLikes}</h2>
+      return ( <h2 onClick={this.hander}>{isLikes}</h2> );
     }
   }
   ReactDOM.render(<Likes/>,document.getElementById('example'))
+
 </script>
 </body>
 </html>
