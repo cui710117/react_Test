@@ -20,24 +20,30 @@
   */
   
 
-  class Likes extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = {Like: true }
+  class Likes extends React.Component{
+    constructor(pros){
+      super(pros)
+      //初始化状态
+      this.state={
+        isLikesMe:true
+      }
     }
-    hander=()=>{
+    handleClick=()=>{
+      //更新islikesme状态数据
+      const isLikesMe=!this.state.isLikesMe
       this.setState({
-        Like:!this.state.Like
+        isLikesMe:isLikesMe
       })
     }
-    render() { 
-      const Like=this.state.Like
-      const isLikes=Like?'我喜欢你':'你喜欢我'
-      return ( <h2 onClick={this.hander}>{isLikes}</h2> );
+    render(){
+      //读取状态数据
+      const isLikesMe=this.state.isLikesMe
+      const text=isLikesMe ? 'I Like You':'You Like Me'
+      return <h2 onClick={this.handleClick}>{text}</h2>
     }
   }
-  ReactDOM.render(<Likes/>,document.getElementById('example'))
 
+  ReactDOM.render(<Likes/>,document.getElementById('example'))
 </script>
 </body>
 </html>
